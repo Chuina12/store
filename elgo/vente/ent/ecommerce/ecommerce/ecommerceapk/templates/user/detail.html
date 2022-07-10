@@ -1,0 +1,28 @@
+{% extends 'user/account.html' %}
+{% block product %}
+<!DOCTYPE html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <form method='POST' enctype='multipart/form-data'>
+             {% csrf_token %}
+           <h1> NOM PRODUIT:  {{object.nom_produit}}</h1>
+            <h1> PRIX : {{object.prix}}</h1>
+            <h1>  Description:{{object.description}}</h1>
+             <img src='{{object.photo.url}}' style='width:100px; height:100px'>
+             
+
+             
+        </form>
+    
+    </body>
+</html>
+
+{% endblock%}
